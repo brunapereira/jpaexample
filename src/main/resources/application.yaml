@@ -1,0 +1,23 @@
+spring:
+  profiles:
+    active: local
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      poolName: SpringBootJPAHikariCP
+      idleTimeout: 30000
+      minimumIdle: 1
+      maximumPoolSize: 2
+    url: jdbc:postgresql://localhost:5434/jpaexample?user=postgres&password=postgrespsw
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+        jdbc:
+          batch_size: 100
+        format_sql: true
+        show_sql: true
+        ddl-auto: none
+        max-fetch-depth: 0
+        default-batch-fetch-size: 25
+        batch-fetch-style: PADDED
